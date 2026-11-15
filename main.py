@@ -4,20 +4,20 @@ D=(16,-16,1,-1,17,15,-17,-15)
 J=(33,31,18,14,-14,-18,-31,-33)
 Q=(5,4,3,2)
 def A(b,k,s):
- for d in (-1,1):
-  j=k-16*s+d
-  if not j&136 and b[j]==s:return True
+ for d in (-1, 1):
+  j = k-16*s+d
+  if not j&136 and b[j] == s:return True
  for d in J:
-  j=k+d
-  if not j&136 and b[j]==2*s:return True
- for n,d in enumerate(D):
-  j=k+d;t=1
+  j = k+d
+  if not j&136 and b[j] == 2*s:return True
+ for n, d in enumerate(D):
+  j = k+d;t = 1
   while not j&136:
-   v=b[j]
+   v = b[j]
    if v:
-    if v*s>0 and (abs(v)==5 or abs(v)==(4 if n<4 else 3) or t==1 and abs(v)==6):return True
+    if v*s > 0 and (abs(v) == 5 or abs(v) == (4 if n < 4 else 3) or t == 1 and abs(v) == 6):return True
     break
-   j+=d;t+=1
+   j += d;t += 1
  return False
 def G(p,q):
  b,s,c,e,h=p;m=[]
